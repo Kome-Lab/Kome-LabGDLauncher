@@ -98,7 +98,8 @@ const InstanceDuplicateName = ({ instanceName }) => {
         `}
       >
         <p>
-          <b>{oldInstanceName}</b>を複製するギリ。複製したインスタンスの名前を入力するギリ。
+          <b>{oldInstanceName}</b>
+          を複製するギリ。複製したインスタンスの名前を入力するギリ。
         </p>
         <Input
           size="large"

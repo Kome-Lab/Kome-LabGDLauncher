@@ -281,7 +281,7 @@ export default function ThirdStep({
                   {isCompleted ? (
                     <div>
                       <h1>
-                      完了したギリ!{' '}
+                        完了したギリ!{' '}
                         <FontAwesomeIcon
                           icon={faCheck}
                           css={`

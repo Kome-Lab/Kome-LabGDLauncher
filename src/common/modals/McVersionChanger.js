@@ -88,7 +88,8 @@ const McVersionChanger = ({ instanceName, defaultValue }) => {
                 DISCLAIMER
               </div>
               <div>
-              ModLoader (Forge,Fabric...)を変更すると、一部データが変更される可能性があるギリ。また、バージョンを変更するとこのランチャーがModPackをロードできなくなる可能性があるギリ。
+                ModLoader
+                (Forge,Fabric...)を変更すると、一部データが変更される可能性があるギリ。また、バージョンを変更するとこのランチャーがModPackをロードできなくなる可能性があるギリ。
               </div>
             </div>
           )}
