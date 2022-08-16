@@ -1,4 +1,4 @@
-name: GDLauncher CI
+name: Kome-LabGDLauncher CI
 
 on:
   push:

@@ -53,6 +53,7 @@ const LeftSide = styled.div`
   width: 300px;
   padding: 40px;
   height: 100%;
+  text-align: center;
   transition: 0.3s ease-in-out;
   transform: translateX(
     ${({ transitionState }) =>
@@ -191,7 +192,7 @@ const Login = () => {
         <Container>
           <LeftSide transitionState={transitionState}>
             <Header>
-              <HorizontalLogo size={200} />
+              <HorizontalLogo size={280} />
             </Header>
             <p>Mojangアカウントログイン</p>
             <Form>

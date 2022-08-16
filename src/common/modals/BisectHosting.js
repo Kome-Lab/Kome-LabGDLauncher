@@ -15,7 +15,7 @@ const BisectHosting = () => {
       title="Kome-Lab"
     >
       <Container>
-        <BisectHostingLogo size={70} hover />
+        <BisectHostingLogo size={200} hover />
         <h2
           css={`
             margin-top: 20px;

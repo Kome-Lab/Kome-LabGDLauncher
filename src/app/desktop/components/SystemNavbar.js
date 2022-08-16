@@ -203,7 +203,7 @@ const SystemNavbar = () => {
                 white-space: nowrap;
               `}
             >
-              Partnered with &nbsp;&nbsp;
+              Customized
             </div>
             <BisectHosting
               showPointerCursor
@@ -213,6 +213,7 @@ const SystemNavbar = () => {
               }}
             />
             {/* <PulsatingCircle /> */}
+            Studio-Kometubu Edition
           </div>
         </>
       )}

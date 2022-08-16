@@ -30,7 +30,7 @@ const InstanceStartupAd = ({ instanceName }) => {
         width: 650px;
         overflow-x: hidden;
       `}
-      title={`Starting up ${instanceName}`}
+      title={`${instanceName} を起動中ギリ...`}
     >
       <div
         css={`
@@ -69,7 +69,7 @@ const InstanceStartupAd = ({ instanceName }) => {
         >
           <span
             css={`
-              font-size: 14px;
+              font-size: 18px;
             `}
           >
             Kome-LabGDLauncher <br /> を使ってくれてありがとうギリ!
@@ -81,20 +81,9 @@ const InstanceStartupAd = ({ instanceName }) => {
           >
             <BisectHosting
               onClick={openBisectHostingModal}
-              size={60}
+              size={125}
               showPointerCursor
             />
-          </div>
-          <div>
-            <span
-              css={`
-                font-size: 70px;
-                color: ${({ theme }) => theme.palette.colors.red};
-              `}
-            >
-              &#10084;
-            </span>
-            <div>Thank you!</div>
           </div>
         </div>
       </div>
