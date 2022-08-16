@@ -1,18 +1,17 @@
 /* eslint-disable react/no-unescaped-entities */
 import React, { memo, useState, useEffect, useMemo } from 'react';
-import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { ipcRenderer } from 'electron';
 import TypeAnimation from 'react-type-animation';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBug, faStar, faWrench } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from 'react-intersection-observer';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { Button } from 'antd';
 import Modal from '../../components/Modal';
 import SocialButtons from '../../components/SocialButtons';
-import KoFiButton from '../../assets/ko-fi.png';
 import UpdateIllustration from '../../assets/update_illustration.png';
 import UpdateIllustrationChristmas from '../../assets/update_illustration_christmas.png';
-import { openModal } from '../../reducers/modals/actions';
 import ga from '../../utils/analytics';
 import changelog from './changeLog';
 
@@ -69,8 +68,7 @@ const UpdateRow = ({ header, content, advanced }) => {
 const ChangeLogs = () => {
   const [version, setVersion] = useState(null);
   const [skipIObserver, setSkipIObserver] = useState(true);
-  const [showAdvanced, setShowAdvanced] = useState(false);
-  const dispatch = useDispatch();
+  const [showAdvanced] = useState(false);
   const { ref: intersectionObserverRef, inView: insectionObserverInView } =
     useInView({
       threshold: 0.3,
@@ -128,11 +126,6 @@ const ChangeLogs = () => {
     }
   }, [insectionObserverInView]);
 
-  const openBisectModal = () => {
-    dispatch(openModal('BisectHosting'));
-    ga.sendCustomEvent('changelogModalOpenBisect');
-  };
-
   const isChristmas =
     new Date().getMonth() === 11 &&
     [21, 22, 23, 24, 25, 26, 27, 28, 29].includes(new Date().getDate());
@@ -141,9 +134,9 @@ const ChangeLogs = () => {
     <Modal
       css={`
         height: 550px;
-        width: 475px;
+        width: 900px;
       `}
-      title={`What's new in ${version}`}
+      title={`${version} のアップデート内容！`}
       removePadding
     >
       <Container>
@@ -189,57 +182,6 @@ const ChangeLogs = () => {
             src={isChristmas ? UpdateIllustrationChristmas : UpdateIllustration}
             alt="New Version"
           />
-          <div
-            css={`
-              margin-top: 20px;
-              color: ${props => props.theme.palette.text.third};
-              span {
-                color: ${props => props.theme.palette.text.primary};
-                cursor: pointer;
-                text-decoration: underline;
-              }
-            `}
-          >
-            If you appreciate our work, please consider supporting us through a
-            donation or grab a server from our official partner{' '}
-            <span onClick={openBisectModal}>BisectHosting</span>
-          </div>
-          <div
-            css={`
-              display: flex;
-              align-items: center;
-              justify-content: start;
-              margin-bottom: 20px;
-              margin-top: 20px;
-              a:nth-child(1) {
-                margin-right: 20px;
-              }
-              img {
-                border-radius: 30px;
-                height: 40px;
-                cursor: pointer;
-                transition: transform 0.2s ease-in-out;
-                &:hover {
-                  transform: scale(1.05);
-                }
-              }
-            `}
-          >
-            <a href="https://ko-fi.com/gdlauncher">
-              <img src={KoFiButton} alt="Ko-Fi" />
-            </a>
-          </div>
-          <a
-            css={`
-              margin-top: 20px;
-              color: ${props => props.theme.palette.primary.light};
-            `}
-            onClick={() => setShowAdvanced(!showAdvanced)}
-          >
-            {showAdvanced
-              ? 'Hide extended information'
-              : 'Show extended information'}
-          </a>
         </Header>
         <Section>
           {changelog.new.length ? (
@@ -252,6 +194,7 @@ const ChangeLogs = () => {
                 css={`
                   display: flex;
                   align-items: center;
+                  padding-top: 50px;
                 `}
               >
                 <FontAwesomeIcon
@@ -261,7 +204,7 @@ const ChangeLogs = () => {
                     font-size: 20px;
                   `}
                 />
-                New
+                新機能ギリ
               </span>
             </SectionTitle>
           ) : null}
@@ -297,7 +240,7 @@ const ChangeLogs = () => {
                     font-size: 20px;
                   `}
                 />
-                Improved
+                改善内容ギリ
               </span>
             </SectionTitle>
           ) : null}
@@ -333,7 +276,7 @@ const ChangeLogs = () => {
                     font-size: 20px;
                   `}
                 />
-                Bug Fixes
+                修正内容ギリ
               </span>
             </SectionTitle>
           ) : null}
@@ -348,6 +291,37 @@ const ChangeLogs = () => {
               />
             ))}
           </ul>
+        </Section>
+        <Section>
+          <SectionTitle
+            css={`
+              color: ${props => props.theme.palette.colors.jungleGreen};
+            `}
+          >
+            <span>GDLauncher License</span>
+          </SectionTitle>
+          <p>
+            This project is licensed under the GNU GPL V3.0 - see the GitHub
+            <br />
+            LICENSE file for details. The parent project is "GDLauncher".
+            <br />
+            Kome-LabGDLauncherはgorilla-devs/GDLauncherをベースに作成されています。
+          </p>
+          <Button
+            css={`
+              width: 200px;
+              height: 40px;
+              font-size: 20px;
+              padding: 4px !important;
+              margin-top: 3px;
+              margin-bottom: 10px;
+            `}
+            type="primary"
+            href="https://github.com/Kome-Lab/Kome-LabGDLauncher/blob/master/LICENSE"
+          >
+            <FontAwesomeIcon icon={faGithub} />
+            &nbsp; LICENSE
+          </Button>
         </Section>
       </Container>
       <div
@@ -364,14 +338,14 @@ const ChangeLogs = () => {
         `}
       >
         <SocialButtons />
-        <span
-          css={`
-            padding-left: 20px;
-            color: ${props => props.theme.palette.text.secondary};
-          `}
-        >
-          Follow us for more updates
-        </span>
+        {/* <span */}
+        {/*  css={` */}
+        {/*    padding-left: 20px; */}
+        {/*    color: ${props => props.theme.palette.text.secondary}; */}
+        {/*  `} */}
+        {/* > */}
+        {/*  Follow us for more updates */}
+        {/* </span> */}
       </div>
     </Modal>
   );

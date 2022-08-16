@@ -10,7 +10,7 @@ const defaultValue = {
   details: 'Idle',
   startTimestamp: initialAppStartup,
   largeImageKey: 'default_big',
-  largeImageText: 'GDLauncher - A Custom Minecraft Launcher',
+  largeImageText: 'Kome-LabGDLauncher - A Custom Minecraft Launcher',
   instance: false
 };
 
@@ -24,7 +24,7 @@ exports.initRPC = () => {
     client.setActivity(activity);
   });
 
-  client.login({ clientId: '555898932467597312' }).catch(error => {
+  client.login({ clientId: '892636912781758485' }).catch(error => {
     if (error.message.includes('ENOENT')) {
       log.error('Unable to initialize Discord RPC, no client detected.');
     } else {

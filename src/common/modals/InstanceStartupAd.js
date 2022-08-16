@@ -48,7 +48,7 @@ const InstanceStartupAd = ({ instanceName }) => {
             margin-top: 20px;
           `}
         >
-          Your instance is starting...
+          インスタンスを起動しているギリ...
           <LoadingOutlined
             css={`
               margin-left: 30px;
@@ -72,7 +72,7 @@ const InstanceStartupAd = ({ instanceName }) => {
               font-size: 14px;
             `}
           >
-            Grab a server from <br /> our official partner
+            Kome-LabGDLauncher <br /> を使ってくれてありがとうギリ!
           </span>
           <div
             css={`

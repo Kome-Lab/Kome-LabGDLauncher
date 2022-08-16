@@ -303,7 +303,7 @@ const Instance = ({ instanceName }) => {
                     {!isPlaying.initialized && <div className="spinner" />}
                   </div>
                 )}
-                {isInQueue && 'In Queue'}
+                {isInQueue && '待機中...'}
                 {!isInQueue && !isPlaying && <span>PLAY</span>}
               </>
             )}
@@ -326,7 +326,7 @@ const Instance = ({ instanceName }) => {
                   width: 25px !important;
                 `}
               />
-              Kill
+              強制終了
             </MenuItem>
           )}
           <MenuItem disabled={Boolean(isInQueue)} onClick={manageInstance}>
@@ -337,7 +337,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Manage
+            インスタンス設定
           </MenuItem>
           <MenuItem onClick={openFolder}>
             <FontAwesomeIcon
@@ -347,7 +347,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Open Folder
+            フォルダーを開く
           </MenuItem>
 
           {/* // TODO - Support other export options besides curseforge forge. */}
@@ -369,7 +369,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Export Pack
+            エクスポート
           </MenuItem>
           <MenuItem
             disabled={Boolean(isInQueue)}
@@ -382,7 +382,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Duplicate
+            インスタンスを複製
           </MenuItem>
           <MenuItem divider />
           <MenuItem
@@ -419,7 +419,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Repair
+            インスタンスを修復
           </MenuItem>
           <MenuItem
             disabled={Boolean(isInQueue) || Boolean(isPlaying)}
@@ -432,7 +432,7 @@ const Instance = ({ instanceName }) => {
                 width: 25px !important;
               `}
             />
-            Delete
+            インスタンスを削除
           </MenuItem>
           <MenuItem divider />
           <MenuItem

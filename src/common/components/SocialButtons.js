@@ -1,10 +1,4 @@
-import {
-  faDiscord,
-  faFacebook,
-  faGithub,
-  faInstagram,
-  faTwitter
-} from '@fortawesome/free-brands-svg-icons';
+import { faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { faGlobe } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React, { memo } from 'react';
@@ -38,32 +32,17 @@ const SocialButtons = () => {
         }
       `}
     >
-      <a href="https://discord.gdlauncher.com">
-        <div>
-          <FontAwesomeIcon icon={faDiscord} size="lg" />
-        </div>
-      </a>
-      <a href="https://github.com/gorilla-devs/GDLauncher">
+      <a href="https://github.com/Kome-Lab/Kome-LabGDLauncher">
         <div>
           <FontAwesomeIcon icon={faGithub} size="lg" />
         </div>
       </a>
-      <a href="https://twitter.com/gdlauncher">
+      <a href="https://twitter.com/donker_jumala">
         <div>
           <FontAwesomeIcon icon={faTwitter} size="lg" />
         </div>
       </a>
-      <a href="https://facebook.com/gorilladevs">
-        <div>
-          <FontAwesomeIcon icon={faFacebook} size="lg" />
-        </div>
-      </a>
-      <a href="https://instagram.com/gdlauncher">
-        <div>
-          <FontAwesomeIcon icon={faInstagram} size="lg" />
-        </div>
-      </a>
-      <a href="https://gdevs.io">
+      <a href="https://kome-lab.net/kome-lab-gd-launcher">
         <div>
           <FontAwesomeIcon icon={faGlobe} size="lg" />
         </div>

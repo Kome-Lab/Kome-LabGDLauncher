@@ -301,7 +301,7 @@ const Overview = ({ instanceName, background, manifest }) => {
           `}
         >
           <Card
-            title="Minecraft Version"
+            title="Minecraft バージョン"
             color={props => props.theme.palette.colors.jungleGreen}
             instanceName={instanceName}
             defaultValue={config?.loader}
@@ -319,7 +319,7 @@ const Overview = ({ instanceName, background, manifest }) => {
             {config?.loader?.loaderType}
           </Card>
           <Card
-            title="Modloader Version"
+            title="Modloader バージョン"
             color={props => props.theme.palette.colors.lightBlue}
             instanceName={instanceName}
             defaultValue={config?.loader}
@@ -349,13 +349,13 @@ const Overview = ({ instanceName, background, manifest }) => {
             {config?.mods?.length || '-'}
           </Card>
           <Card
-            title="Played Time"
+            title="プレイ時間"
             color={props => props.theme.palette.colors.liberty}
           >
             {convertMinutesToHumanTime(config?.timePlayed)}
           </Card>
           <Card
-            title="Last Played"
+            title="最後にプレイした時間"
             color={props => props.theme.palette.colors.orange}
           >
             {config?.lastPlayed ? computeLastPlayed(config?.lastPlayed) : '-'}
@@ -376,13 +376,13 @@ const Overview = ({ instanceName, background, manifest }) => {
         <RenameRow>
           <Input value={newName} onChange={e => setNewName(e.target.value)} />
           <RenameButton onClick={() => renameInstance()} type="primary">
-            Rename&nbsp;
+            名前変更　
             <FontAwesomeIcon icon={faSave} />
           </RenameButton>
         </RenameRow>
         <OverviewCard>
           <JavaManagerRow>
-            <div>Override Game Resolution</div>
+            <div>カスタムゲーム解像度</div>
             <Switch
               checked={height && width}
               onChange={v => {
@@ -476,7 +476,7 @@ const Overview = ({ instanceName, background, manifest }) => {
             </ResolutionInputContainer>
           )}
           <JavaManagerRow>
-            <div>Override Java Memory</div>
+            <div>カスタムJava最大メモリ</div>
             <Switch
               checked={javaLocalMemory}
               onChange={v => {
@@ -522,7 +522,7 @@ const Overview = ({ instanceName, background, manifest }) => {
             </div>
           )}
           <JavaManagerRow>
-            <div>Override Java Arguments</div>
+            <div>カスタムJava引数 (高度な設定)</div>
             <Switch
               checked={javaLocalArguments}
               onChange={v => {
@@ -554,7 +554,9 @@ const Overview = ({ instanceName, background, manifest }) => {
             </JavaManagerRow>
           )}
           <JavaManagerRow>
-            <div>Custom Java Path {`<Java ${javaVersion}>`} </div>
+            <div>
+              カスタムJavaパス指定 {`<Java ${javaVersion}>`} (高度な設定)
+            </div>
             <Switch
               checked={customJavaPath}
               onChange={v => {

@@ -151,7 +151,7 @@ export default function MyAccountPreferences() {
           text-align: left;
         `}
       >
-        Autodetect Java Path&nbsp; <FontAwesomeIcon icon={faJava} />
+        自動Javaセットアップ設定 <FontAwesomeIcon icon={faJava} />
         <a
           css={`
             margin-left: 30px;
@@ -160,7 +160,7 @@ export default function MyAccountPreferences() {
             dispatch(openModal('JavaSetup'));
           }}
         >
-          Run Java Setup again
+          Javaを再度セットアップするギリ
         </a>
       </Title>
       <AutodetectPath>
@@ -169,9 +169,8 @@ export default function MyAccountPreferences() {
             text-align: left;
           `}
         >
-          Disable this to specify a custom java path to use instead of using
-          OpenJDK shipped with GDLauncher. If that is the case, select the path
-          to your Java executable.
+          無効にすると、java.exeを自分で設定する必要があるギリ。
+          自動でJavaをセットアップするとOpenJDKを使用するギリ。
         </Paragraph>
         <Switch
           color="primary"
@@ -306,7 +305,7 @@ export default function MyAccountPreferences() {
             margin-bottom: 20px;
           `}
         >
-          Game Resolution&nbsp; <FontAwesomeIcon icon={faDesktop} />
+          ゲーム解像度設定 <FontAwesomeIcon icon={faDesktop} />
         </Title>
         <Paragraph
           css={`
@@ -315,7 +314,7 @@ export default function MyAccountPreferences() {
             margin: 0;
           `}
         >
-          Select the initial game resolution in pixels (width x height).
+          Minecraft起動時の画面サイズを指定するギリ【横 x 縦】
         </Paragraph>
         <ResolutionInputContainer>
           <div>
@@ -338,7 +337,7 @@ export default function MyAccountPreferences() {
             />
           </div>
           <Select
-            placeholder="Presets"
+            placeholder="プリセット"
             onChange={v => {
               const w = parseInt(v.split('x')[0], 10);
               const h = parseInt(v.split('x')[1], 10);
@@ -376,7 +375,7 @@ export default function MyAccountPreferences() {
             margin-bottom: 20px;
           `}
         >
-          Java Memory&nbsp; <FontAwesomeIcon icon={faMemory} />
+          Java メモリ設定 <FontAwesomeIcon icon={faMemory} />
         </Title>
         <Paragraph
           css={`
@@ -385,7 +384,7 @@ export default function MyAccountPreferences() {
             margin: 0;
           `}
         >
-          Select the preferred amount of memory to use when launching the game.
+          Minecraftに使用する最大メモリ量を選択するギリ。
         </Paragraph>
         <div
           css={`
@@ -427,14 +426,14 @@ export default function MyAccountPreferences() {
             text-align: left;
           `}
         >
-          Java Custom Arguments &nbsp; <FontAwesomeIcon icon={faList} />
+          Java カスタム引数設定 &nbsp; <FontAwesomeIcon icon={faList} />
         </Title>
         <Paragraph
           css={`
             text-align: left;
           `}
         >
-          Select the preferred custom arguments to use when launching the game.
+          Minecraftで使用するJVM引数を設定するギリ※これは高度な設定ギリ
         </Paragraph>
         <div
           css={`
@@ -475,8 +474,7 @@ export default function MyAccountPreferences() {
               text-align: left;
             `}
           >
-            Select the preferred Minecraft startup method. Only change this if
-            you&apos;re experiencing issues with the default one.
+            Minecraftの起動方法を設定するギリ。
           </Paragraph>
           <Select
             value={mcStartupMethod}

@@ -7,7 +7,6 @@ import AsyncComponent from '../../components/AsyncComponent';
 import CloseButton from '../../components/CloseButton';
 import SocialButtons from '../../components/SocialButtons';
 import { closeModal, openModal } from '../../reducers/modals/actions';
-import KoFiButton from '../../assets/ko-fi.png';
 
 const Container = styled.div`
   display: flex;
@@ -121,7 +120,7 @@ export default function Settings() {
           onClick={() => dispatch(closeModal())}
         />
         <SideMenu>
-          <SettingsTitle>General</SettingsTitle>
+          <SettingsTitle>各種設定</SettingsTitle>
           {Object.values(pages).map(val => (
             <SettingsButton
               key={val.name}
@@ -131,12 +130,6 @@ export default function Settings() {
               {val.name}
             </SettingsButton>
           ))}
-          {/* <SettingsButton onClick={() => setPage("User Interface")}>
-            User Interface
-          </SettingsButton>
-          <SettingsTitle>Game Settings</SettingsTitle>
-          <SettingsButton>Graphic Settings</SettingsButton>
-          <SettingsButton>Sound Settings</SettingsButton> */}
           <div
             css={`
               align-items: left;
@@ -154,32 +147,8 @@ export default function Settings() {
                 font-size: 16px;
               `}
             >
-              Support GDLauncher
+              Kome-LabGDLauncher
             </span>
-            <div
-              css={`
-                img {
-                  border-radius: 30px;
-                  height: 40px;
-                  cursor: pointer;
-                  transition: transform 0.2s ease-in-out;
-                  &:hover {
-                    transform: scale(1.05);
-                  }
-                }
-              `}
-            >
-              <a href="https://ko-fi.com/gdlauncher">
-                <img
-                  src={KoFiButton}
-                  alt="Ko-Fi"
-                  css={`
-                    margin-bottom: 0px;
-                    margin-top: 20px;
-                  `}
-                />
-              </a>
-            </div>
             <div
               css={`
                 margin-top: 20px;

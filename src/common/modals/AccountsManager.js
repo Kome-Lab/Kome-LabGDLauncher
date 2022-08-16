@@ -30,7 +30,7 @@ const ProfileSettings = () => {
         width: 400px;
         max-height: 700px;
       `}
-      title="Account Manager"
+      title="アカウント管理"
     >
       <Container>
         <AccountsContainer>
@@ -97,7 +97,7 @@ const ProfileSettings = () => {
                         )
                       }
                     >
-                      Login again
+                      再度ログインするギリ
                     </HoverContainer>
                   )}
                   {account.selectedProfile.id ===
@@ -134,7 +134,7 @@ const ProfileSettings = () => {
         </AccountsContainer>
         <AccountContainer>
           <AccountItem onClick={() => dispatch(openModal('AddAccount'))}>
-            Add Account
+            アカウントを追加するギリ
           </AccountItem>
         </AccountContainer>
       </Container>

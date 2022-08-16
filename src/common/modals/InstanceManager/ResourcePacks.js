@@ -360,7 +360,7 @@ const ResourcePacks = ({ instanceName }) => {
                 : setSelectedItems([])
             }
           >
-            Select All
+            全選択
           </Checkbox>
           <TrashIcon
             selectedMods={selectedItems.length}
@@ -396,7 +396,7 @@ const ResourcePacks = ({ instanceName }) => {
             openFolderDialog();
           }}
         >
-          Add ResourcePack
+          リソースパックを追加するギリ
         </Button>
       </Header>
 
@@ -406,7 +406,7 @@ const ResourcePacks = ({ instanceName }) => {
         fileList={resourcePacks}
       >
         {resourcePacks.length === 0 && (
-          <NotItemsAvailable>No ResourcePacks Available</NotItemsAvailable>
+          <NotItemsAvailable>リソースパックが無いギリ</NotItemsAvailable>
         )}
         <AutoSizer>
           {({ height, width }) => (

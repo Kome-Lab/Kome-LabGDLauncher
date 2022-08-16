@@ -90,7 +90,7 @@ const Content = ({
                         width: 22px;
                       `}
                     />
-                    Vanilla
+                    バニラ
                   </Radio.Button>
                   <Radio.Button value={1}>
                     <img

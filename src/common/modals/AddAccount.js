@@ -43,7 +43,7 @@ const AddAccount = ({ username }) => {
             height: 80px;
           `}
         >
-          Mojang Login
+          Mojang ログイン
         </h1>
         <StyledInput
           disabled={!!username}
@@ -72,7 +72,7 @@ const AddAccount = ({ username }) => {
             height: 80px;
           `}
         >
-          Microsoft Login
+          Microsoft ログイン
         </h1>
         <FormContainer>
           <h2>External Login</h2>
@@ -85,7 +85,7 @@ const AddAccount = ({ username }) => {
                 `}
                 onClick={addMicrosoftAccount}
               >
-                Retry
+                もう一度やり直す
               </StyledButton>
             </>
           ) : (
@@ -114,7 +114,7 @@ const AddAccount = ({ username }) => {
             key={ACCOUNT_MOJANG}
             onClick={() => setAccountType(ACCOUNT_MOJANG)}
           >
-            Mojang Account
+            Mojang アカウント
           </StyledAccountMenuItem>
           <StyledAccountMenuItem
             key={ACCOUNT_MICROSOFT}
@@ -123,7 +123,7 @@ const AddAccount = ({ username }) => {
               addMicrosoftAccount();
             }}
           >
-            Microsoft Account
+            Microsoft アカウント
           </StyledAccountMenuItem>
         </Menu>
         {accountType === ACCOUNT_MOJANG ? renderAddMojangAccount() : null}
@@ -150,7 +150,7 @@ const LoginFailMessage = styled.div`
 const StyledAccountMenuItem = styled(Menu.Item)`
   width: auto;
   height: auto;
-  font-size: 18px;
+  font-size: 16px;
 `;
 
 const FormContainer = styled.div`

@@ -183,7 +183,10 @@ try {
   // Do nothing
 }
 
-app.setPath('userData', path.join(app.getPath('appData'), 'gdlauncher_next'));
+app.setPath(
+  'userData',
+  path.join(app.getPath('appData'), 'kome-labgdlauncher_next')
+);
 
 let allowUnstableReleases = false;
 const releaseChannelExists = fss.existsSync(
@@ -320,7 +323,7 @@ function createWindow() {
         ...requestHeaders
       } = details.requestHeaders;
       if (xSkipOrigin !== 'skip') {
-        requestHeaders.Origin = 'https://gdevs.io';
+        requestHeaders.Origin = 'https://kome-lab.net/kome-lab-gd-launcher';
       }
       callback({ cancel: false, requestHeaders });
     }
@@ -881,8 +884,8 @@ if (process.env.REACT_APP_RELEASE_TYPE === 'setup') {
     !allowUnstableReleases && app.getVersion().includes('beta');
   autoUpdater.allowPrerelease = allowUnstableReleases;
   autoUpdater.setFeedURL({
-    owner: 'gorilla-devs',
-    repo: 'GDLauncher',
+    owner: 'Kome-Lab',
+    repo: 'Kome-LabGDLauncher',
     provider: 'github'
   });
 

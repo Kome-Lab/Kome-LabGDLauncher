@@ -70,6 +70,7 @@ const PersonalData = styled.div`
 const MainTitle = styled.h1`
   color: ${props => props.theme.palette.text.primary};
   margin: 0 500px 20px 0;
+  font-size: 20px;
 `;
 
 const ProfileImage = styled.img`
@@ -270,7 +271,7 @@ const General = () => {
   return (
     <>
       <PersonalData>
-        <MainTitle>General</MainTitle>
+        <MainTitle>一般設定</MainTitle>
         <PersonalDataContainer>
           <ProfileImage
             src={profileImage ? `data:image/jpeg;base64,${profileImage}` : null}
@@ -285,7 +286,7 @@ const General = () => {
             `}
           >
             <div>
-              Username <br />
+              ユーザー名 <br />
               <Username>{currentAccount.selectedProfile.name}</Username>
             </div>
             <div>
@@ -317,12 +318,9 @@ const General = () => {
           </div>
         </PersonalDataContainer>
       </PersonalData>
-      <Title>Release Channel</Title>
+      <Title>リリース チャンネル</Title>
       <Content>
-        <p>
-          Stable updates once a month. Beta updates more often, but it may have
-          more bugs.
-        </p>
+        <p>更新時に安定版を利用するかベータ版を利用するかを設定するギリ。</p>
         <Select
           css={`
             width: 100px;
@@ -338,28 +336,25 @@ const General = () => {
           value={releaseChannel}
           virtual={false}
         >
-          <Select.Option value={0}>Stable</Select.Option>
-          <Select.Option value={1}>Beta</Select.Option>
+          <Select.Option value={0}>安定版</Select.Option>
+          <Select.Option value={1}>ベータ版</Select.Option>
         </Select>
       </Content>
       <Title>
-        Concurrent Downloads &nbsp; <FontAwesomeIcon icon={faTachometerAlt} />
+        同時ダウンロード数 &nbsp; <FontAwesomeIcon icon={faTachometerAlt} />
       </Title>
       <Content>
-        <p>
-          Select the number of concurrent downloads. If you have a slow
-          connection, select at most 3.
-        </p>
+        <p>同時にダウンロードできる最大値を設定するギリ。(おすすめは3)</p>
         <Select
           onChange={v => dispatch(updateConcurrentDownloads(v))}
           value={concurrentDownloads}
           css={`
-            width: 70px;
+            width: 80px;
             text-align: start;
           `}
           virtual={false}
         >
-          {[...Array(20).keys()]
+          {[...Array(10).keys()]
             .map(x => x + 1)
             .map(x => (
               <Select.Option key={x} value={x}>
@@ -369,7 +364,7 @@ const General = () => {
         </Select>
       </Content>
       <Title>
-        Instance Sorting &nbsp; <FontAwesomeIcon icon={faSort} />
+        インスタンスの並び順 <FontAwesomeIcon icon={faSort} />
       </Title>
       <Content>
         <p
@@ -378,51 +373,51 @@ const General = () => {
             width: 400px;
           `}
         >
-          Select the method in which instances should be sorted.
+          インスタンスの並べ替え方法を変えれるギリ。
         </p>
 
         <Select
           onChange={v => dispatch(updateInstanceSortType(v))}
           value={instanceSortMethod}
           css={`
-            width: 136px;
+            width: 180px;
             text-align: start;
           `}
         >
-          <Select.Option value={0}>Alphabetical</Select.Option>
-          <Select.Option value={1}>Last Played</Select.Option>
-          <Select.Option value={2}>Most Played</Select.Option>
+          <Select.Option value={0}>名前順</Select.Option>
+          <Select.Option value={1}>最後にプレイした順</Select.Option>
+          <Select.Option value={2}>よく遊んでる順</Select.Option>
         </Select>
       </Content>
       <Title>
-        Preferred Curse Release Channel &nbsp; <FontAwesomeIcon icon={faFire} />
+        優先するCurseのリリースチャンネル <FontAwesomeIcon icon={faFire} />
       </Title>
       <Content>
         <p>
-          Select the preferred release channel for downloading Curse projects.
-          This also applies for mod updates.
+          Curseプロジェクトをダウンロードするための優先リリースチャンネルを選択するギリ。
+          <br />
+          これは、MODのアップデートにも適用されるギリ。
         </p>
         <Select
           css={`
-            width: 100px;
+            width: 135px;
             text-align: start;
           `}
           onChange={e => dispatch(updateCurseReleaseChannel(e))}
           value={curseReleaseChannel}
           virtual={false}
         >
-          <Select.Option value={1}>Stable</Select.Option>
-          <Select.Option value={2}>Beta</Select.Option>
-          <Select.Option value={3}>Alpha</Select.Option>
+          <Select.Option value={1}>安定版</Select.Option>
+          <Select.Option value={2}>ベータ版</Select.Option>
+          <Select.Option value={3}>アルファ版</Select.Option>
         </Select>
       </Content>
       <Title>
-        Discord Integration &nbsp; <FontAwesomeIcon icon={faDiscord} />
+        Discord RPC設定 <FontAwesomeIcon icon={faDiscord} />
       </Title>
       <Content>
         <p>
-          Enable / disable Discord Integration. This displays what you are
-          playing in Discord.
+          有効化すると、Discordのステータスにプレイしていることが表示されるギリ。
         </p>
         <Switch
           onChange={e => {
@@ -437,10 +432,10 @@ const General = () => {
         />
       </Content>
       <Title>
-        Minecraft News &nbsp; <FontAwesomeIcon icon={faNewspaper} />
+        Minecraft ニュース 表示設定 <FontAwesomeIcon icon={faNewspaper} />
       </Title>
       <Content>
-        <p>Enable / disable Minecraft news.</p>
+        <p>有効化するとインスタンス選択画面上部にニュースが表示されるギリ</p>
         <Switch
           onChange={e => {
             dispatch(updateShowNews(e));
@@ -449,12 +444,14 @@ const General = () => {
         />
       </Content>
       <Title>
-        Hide Launcher While Playing &nbsp; <FontAwesomeIcon icon={faPlay} />
+        インスタンス起動時 ランチャー自動非表示{' '}
+        <FontAwesomeIcon icon={faPlay} />
       </Title>
       <Content>
         <p>
-          Automatically hide the launcher when launching an instance. You will
-          still be able to open it from the icon tray.
+          インスタンス起動時にランチャーを自動的に非表示にし、
+          <br />
+          アイコントレイに表示するギリ。
         </p>
         <Switch
           onChange={e => {
@@ -464,12 +461,13 @@ const General = () => {
         />
       </Content>
       <Title>
-        Potato PC Mode &nbsp; <FontAwesomeIcon icon={faToilet} />
+        ポテト PC モード &nbsp; <FontAwesomeIcon icon={faToilet} />
       </Title>
       <Content>
         <p>
-          You got a potato PC? Don&apos;t worry! We got you covered. Enable this
-          and all animations and special effects will be disabled.
+          もしかして、あなたのPCは低スペックなPCでこのランチャーが重いギリ？
+          <br />
+          そんな時はこの設定を有効化すると、少し軽くなるかもギリ。
         </p>
         <Switch
           onChange={e => {
@@ -479,18 +477,16 @@ const General = () => {
         />
       </Content>
       <Title>
-        Clear Shared Data&nbsp; <FontAwesomeIcon icon={faTrash} />
+        初期化 <FontAwesomeIcon icon={faTrash} />
       </Title>
       <Content>
-        <p>
-          Deletes all the shared files between instances. Doing this will remove
-          ALL instance data.
-        </p>
+        <p>全てのデータを削除して初期状態にするギリ。</p>
         <Button
           onClick={() => {
             dispatch(
               openModal('ActionConfirmation', {
-                message: 'Are you sure you want to delete shared data?',
+                message:
+                  '本当に全部消しても良いギリ？(※どうなっても知らないギリよ?)',
                 confirmCallback: clearSharedData,
                 title: 'Confirm'
               })
@@ -499,11 +495,11 @@ const General = () => {
           disabled={disableInstancesActions}
           loading={deletingInstances}
         >
-          Clear
+          削除
         </Button>
       </Content>
       <Title>
-        User Data Path&nbsp; <FontAwesomeIcon icon={faFolder} />
+        データ保存場所 <FontAwesomeIcon icon={faFolder} />
         <a
           css={`
             margin-left: 30px;
@@ -514,7 +510,7 @@ const General = () => {
             setDataPath(appDataPath);
           }}
         >
-          Reset Path
+          保存場所をリセットする
         </a>
       </Title>
       <CustomDataPathContainer>
@@ -564,7 +560,7 @@ const General = () => {
             }
             loading={loadingMoveUserData}
           >
-            Apply & Restart
+            適用 & 再起動
           </Button>
         </div>
         <div
@@ -579,7 +575,7 @@ const General = () => {
               setMoveUserData(e.target.checked);
             }}
           >
-            Copy current data to the new directory
+            元のデータを新しい場所にコピーするギリ
           </Checkbox>
         </div>
       </CustomDataPathContainer>
@@ -606,8 +602,8 @@ const General = () => {
         </div>
         <p>
           {updateAvailable
-            ? 'There is an update available to be installed. Click on update to install it and restart the launcher.'
-            : 'You’re currently on the latest version. We automatically check for updates and we will inform you whenever one is available.'}
+            ? 'インストール可能なアップデートがあるギリ！<br />アップデートをクリックしてインストールし、ランチャーを再起動するギリ。'
+            : 'このバージョンは最新版ギリ!自動的にアップデートを確認し、アップデートがある場合は　　お知らせするギリ。'}
         </p>
         <div
           css={`
@@ -627,7 +623,7 @@ const General = () => {
               `}
               type="primary"
             >
-              Update &nbsp;
+              更新 &nbsp;
               <FontAwesomeIcon icon={faDownload} />
             </Button>
           ) : (
@@ -638,7 +634,7 @@ const General = () => {
                 padding: 6px 8px;
               `}
             >
-              Up to date
+              最新版ギリ
             </div>
           )}
         </div>

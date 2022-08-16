@@ -13,7 +13,7 @@ const InfoModal = ({ modName, error, preventClose }) => {
       title="Mod failed to download"
     >
       <div>
-        The mod ${modName || ''} failed to download
+        ${modName || ''} のダウンロードに失敗したギリ...
         <div
           css={`
             background: ${props => props.theme.palette.grey[900]};

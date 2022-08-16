@@ -124,8 +124,8 @@ const commonConfig = {
   config: {
     generateUpdatesFilesForAllChannels: true,
     npmRebuild: false,
-    productName: 'GDLauncher',
-    appId: 'org.gorilladevs.GDLauncher',
+    productName: 'Kome-LabGDLauncher',
+    appId: 'net.kome-lab.Kome-LabGDLauncher',
     files: [
       '!node_modules/**/*',
       'build/**/*',

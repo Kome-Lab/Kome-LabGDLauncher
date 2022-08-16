@@ -12,14 +12,16 @@ const AutoUpdatesNotAvailable = () => {
       title="Auto Updates Not Available"
     >
       <Container>
-        <div>Auto updates are not available on this platform.</div>
+        <div>このOSには自動アップデートが導入されて無いギリ</div>
         <div
           css={`
             margin-top: 20px;
           `}
         >
-          Please, update GDLauncher through your package manager or download the
-          new version from our website <a href="https://gdevs.io">here</a>
+          ランチャーを更新するには、
+          <a href="https://github.com/Kome-Lab/Kome-LabGDLauncher/releases">
+            ここをクリックするギリ
+          </a>
         </div>
       </Container>
     </Modal>

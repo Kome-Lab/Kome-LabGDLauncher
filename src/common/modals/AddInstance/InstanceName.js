@@ -447,9 +447,9 @@ const InstanceName = ({
                       `}
                     >
                       {invalidName &&
-                        'Instance name is not valid or too long. Please try another one'}
+                        'インスタンス名が無効であるか長すぎるギリ。別の名前にしてみてギリ。'}
                       {alreadyExists &&
-                        'An instance with this name already exists!'}
+                        'このインスタンス名は既に存在してるギリ!'}
                     </div>
                   </div>
                 </div>

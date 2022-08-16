@@ -214,9 +214,7 @@ const ModOverview = ({
                   font-weight: 700;
                 `}
               >
-                The installed version of this mod has been removed from
-                CurseForge, so you will only be able to get it as part of legacy
-                modpacks.
+                このmodのバージョンはすでにTwitchから削除されているギリ。LegacyModPackの一部としてのみ取得できるギリ。
               </div>
             )}
           <StyledSelect

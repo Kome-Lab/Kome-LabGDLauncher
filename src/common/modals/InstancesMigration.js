@@ -221,7 +221,7 @@ const InstancesMigration = () => {
             color: ${props => props.theme.palette.text.secondary};
           `}
         >
-          Please, do NOT close GDLauncher.
+          絶対にランチャーを閉じないでくださいギリ。
         </div>
         <div
           css={`

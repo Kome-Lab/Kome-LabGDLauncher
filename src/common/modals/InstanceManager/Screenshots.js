@@ -208,7 +208,7 @@ const Screenshots = ({ instanceName }) => {
             getScreenshotsCount(dateGroups) === selectedItems.length
           }
         >
-          {`${selectedItems.length} selected`}
+          {`${selectedItems.length} 個選択中`}
         </GlobalCheckbox>
 
         <DeleteButton
@@ -216,7 +216,7 @@ const Screenshots = ({ instanceName }) => {
             if (selectedItems.length) {
               dispatch(
                 openModal('ActionConfirmation', {
-                  message: 'Are you sure you want to delete this image(s)?',
+                  message: '削除しても良いギリ？',
                   confirmCallback: deleteFile,
                   title: 'Confirm'
                 })
@@ -306,7 +306,7 @@ const Screenshots = ({ instanceName }) => {
                               dispatch(
                                 openModal('ActionConfirmation', {
                                   message:
-                                    'Are you sure you want to delete this image?',
+                                    '削除しても良いギリ？',
                                   fileName: file.name,
                                   confirmCallback: deleteFile,
                                   title: 'Confirm'
@@ -326,7 +326,7 @@ const Screenshots = ({ instanceName }) => {
                                 dispatch(
                                   openModal('ActionConfirmation', {
                                     message:
-                                      'Are you sure you want to delete this image?',
+                                      '削除しても良いギリ？',
                                     fileName: file.name,
                                     confirmCallback: deleteFile,
                                     title: 'Confirm'
@@ -335,7 +335,7 @@ const Screenshots = ({ instanceName }) => {
                               }}
                             >
                               <FontAwesomeIcon icon={faTrash} />
-                              Delete all
+                              全削除
                             </MenuItem>
                           )
                         )}
@@ -353,7 +353,7 @@ const Screenshots = ({ instanceName }) => {
                               }
                             >
                               <FontAwesomeIcon icon={faImage} />
-                              Preview
+                              プレビュー
                             </MenuItem>
                             <MenuItem
                               onClick={() => {
@@ -363,7 +363,7 @@ const Screenshots = ({ instanceName }) => {
                               }}
                             >
                               <FontAwesomeIcon icon={faCopy} />
-                              Copy the image
+                              画像をコピー
                             </MenuItem>
                             <ImgurShareMenuItem
                               disabled={
@@ -397,7 +397,7 @@ const Screenshots = ({ instanceName }) => {
                                       uploadingFileName,
                                       selectedItems
                                     )
-                                  : `Image too big... ${Math.floor(
+                                  : `画像が大きすぎるギリ... ${Math.floor(
                                       file.size / 1024 / 1024
                                     )}MB`}
                               </MenuShareLink>
@@ -417,7 +417,7 @@ const Screenshots = ({ instanceName }) => {
                                 dispatch(
                                   openModal('ActionConfirmation', {
                                     message:
-                                      'Are you sure you want to delete this image?',
+                                      '削除しても良いギリ？',
                                     fileName: file.name,
                                     confirmCallback: deleteFile,
                                     title: 'Confirm'
@@ -426,7 +426,7 @@ const Screenshots = ({ instanceName }) => {
                               }}
                             >
                               <FontAwesomeIcon icon={faTrash} />
-                              Delete
+                              削除
                             </MenuItem>
                           </>
                         )}
@@ -438,7 +438,7 @@ const Screenshots = ({ instanceName }) => {
             );
           })
         ) : (
-          <NoScreenAvailable>No Screenshot Available</NoScreenAvailable>
+          <NoScreenAvailable>画像は無いギリ</NoScreenAvailable>
         )}
       </Container>
     </ExternalContainer>

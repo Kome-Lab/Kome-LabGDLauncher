@@ -88,7 +88,7 @@ const InstanceDuplicateName = ({ instanceName }) => {
         max-height: 235px;
         overflow-x: hidden;
       `}
-      title={`Duplicate Instance "${oldInstanceName}"`}
+      title={`複製するインスタンス "${oldInstanceName}"`}
     >
       <div
         css={`
@@ -98,7 +98,7 @@ const InstanceDuplicateName = ({ instanceName }) => {
         `}
       >
         <p>
-          Please enter a new name for your copy of <b>{oldInstanceName}</b>
+          <b>{oldInstanceName}</b>を複製するギリ。複製したインスタンスの名前を入力するギリ。
         </p>
         <Input
           size="large"
@@ -147,7 +147,7 @@ const InstanceDuplicateName = ({ instanceName }) => {
           disabled={invalidName || alreadyExists}
           type="primary"
         >
-          Duplicate Instance
+          インスタンスを複製するギリ
         </Button>
       </div>
     </Modal>

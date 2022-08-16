@@ -125,7 +125,7 @@ const Home = () => {
             padding: 0 120px;
           `}
         >
-          {account.selectedProfile.name}, welcome to GDLauncher!
+          {account.selectedProfile.name}さん, ようこそ! Kome-LabGDLauncherへ!
         </div>
       </div>
       <div
@@ -148,9 +148,9 @@ const Home = () => {
             margin: 20% 10%;
           `}
         >
-          GDlauncher is completely free and open source. <br />
-          If you want to support us, consider renting a server on BisectHosting,
-          our official partner!
+          Kome-LabGDLauncherは、gorilla-devs/GDLauncherを　　　ベースに日本語化された
+          カスタムMinecraftランチャーギリ。　　　　Kome-LabGDLauncherを使えば、簡単に様々な
+          Minecraftの　バージョンやModで簡単に遊ぶことが出来るギリ。
           <br />
           <br />
           <div
@@ -186,7 +186,7 @@ const Home = () => {
             margin: 20%;
           `}
         >
-          Or you can also support us through Ko-Fi.
+          フォーク元のGDLauncherを応援したい方は　　こちらから出来るギリ
           <div
             css={`
               margin: 40px;
@@ -222,14 +222,15 @@ const Home = () => {
             margin: 20%;
           `}
         >
-          Also, don&apos;t forget to join us on Discord! This is where our
-          community is!
+          Kome-LabGDLauncherの使い方は、
+          <br />
+          Kome-Labのホームページから確認出来るギリ
           <iframe
             css={`
               margin-top: 40px;
             `}
-            src="https://discordapp.com/widget?id=398091532881756161&theme=dark"
-            width="350"
+            src="https://kome-lab.net/kome-lab-gd-launcher"
+            width="1100"
             height="410"
             allowTransparency="true"
             frameBorder="0"

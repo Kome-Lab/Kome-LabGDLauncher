@@ -21,7 +21,7 @@ const AddInstance = ({ defaultPage }) => {
         max-width: 1000px;
         overflow: hidden;
       `}
-      title="Add New Instance"
+      title="新規インスタンス作成"
     >
       <Suspense>
         <Content

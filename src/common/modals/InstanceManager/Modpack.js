@@ -139,7 +139,7 @@ const Modpack = ({ modpackId, instanceName, manifest, fileID }) => {
         `}
       >
         <StyledSelect
-          placeholder={loading ? 'Loading Versions' : 'Select a version'}
+          placeholder={loading ? 'Loading Versions' : 'ModPackのバージョンを選択するギリ...'}
           onChange={handleChange}
           listItemHeight={50}
           listHeight={400}
@@ -218,7 +218,7 @@ const Modpack = ({ modpackId, instanceName, manifest, fileID }) => {
           dispatch(closeModal());
         }}
       >
-        Switch Version
+        バージョンを変更
       </Button>
     </Container>
   );

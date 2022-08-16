@@ -59,8 +59,8 @@ const InstanceCrashed = ({ code, errorLogs }) => {
         <InnerContainer>
           <Logo size={100} />
           <h3>
-            OOPSIE WOOPSIE!!
-            <br /> A creeper blew this instance up!
+            ありゃまぁ...おにぎりが転げ落ちてしまったギリ...
+            <br /> インスタンスがクラッシュしたギリ。エラーログを確認するギリ。
           </h3>
         </InnerContainer>
         <Card

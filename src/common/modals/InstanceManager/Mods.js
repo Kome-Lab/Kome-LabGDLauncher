@@ -698,7 +698,7 @@ const Mods = ({ instanceName }) => {
                 setIsMenuOpen(false);
               }}
             >
-              Update All Mods
+              全てのModをアップデートするギリ
             </div>
           )
         }
@@ -736,7 +736,7 @@ const Mods = ({ instanceName }) => {
                 : setSelectedMods([])
             }
           >
-            Select All
+            全選択
           </Checkbox>
           <DeleteSelectedMods
             onClick={async () => {
@@ -812,7 +812,7 @@ const Mods = ({ instanceName }) => {
             );
           }}
         >
-          Add Mod
+          Modを追加するギリ
         </Button>
         <Input
           allowClear

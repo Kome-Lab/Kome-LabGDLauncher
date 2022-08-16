@@ -281,7 +281,7 @@ export default function ThirdStep({
                   {isCompleted ? (
                     <div>
                       <h1>
-                        All Done!{' '}
+                      完了したギリ!{' '}
                         <FontAwesomeIcon
                           icon={faCheck}
                           css={`
@@ -297,7 +297,7 @@ export default function ThirdStep({
                             margin-top: 20px;
                           `}
                         >
-                          Open Export Location
+                          エクスポート先のフォルダーを開くギリ
                         </Button>
                       </div>
                       <div>
@@ -308,12 +308,12 @@ export default function ThirdStep({
                             margin-top: 20px;
                           `}
                         >
-                          Go Back To Instances
+                          ホーム画面に戻るギリ
                         </Button>
                       </div>
                     </div>
                   ) : (
-                    <h2>We&apos;re doing some magical stuff</h2>
+                    <h2>作成中ギリ...</h2>
                   )}
                 </div>
               </div>

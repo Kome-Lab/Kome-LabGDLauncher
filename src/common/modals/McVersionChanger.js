@@ -57,7 +57,7 @@ const McVersionChanger = ({ instanceName, defaultValue }) => {
 
   return (
     <Modal
-      title="Minecraft Version Changer"
+      title="Minecraft バージョン変更ツール"
       css={`
         height: 380px;
         width: 600px;
@@ -88,10 +88,7 @@ const McVersionChanger = ({ instanceName, defaultValue }) => {
                 DISCLAIMER
               </div>
               <div>
-                Changing modloader (forge -&gt; fabric...) will result in the
-                loss of the modpack metadata. You won&apos;t be able to change
-                the modpack version or recognize this instance as a modpack
-                anymore.
+              ModLoader (Forge,Fabric...)を変更すると、一部データが変更される可能性があるギリ。また、バージョンを変更するとこのランチャーがModPackをロードできなくなる可能性があるギリ。
               </div>
             </div>
           )}

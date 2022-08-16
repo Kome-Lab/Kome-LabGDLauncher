@@ -56,7 +56,6 @@ const JavaSetup = () => {
       })
       .catch(err => console.error(err));
   }, []);
-
   return (
     <Modal
       title="Java Setup"
@@ -81,18 +80,18 @@ const JavaSetup = () => {
                 margin-bottom: 20px;
               `}
             >
-              Java Setup
+              Java のセットアップ
             </div>
             <div
               css={`
                 margin-bottom: 20px;
-                font-size: 18px;
+                font-size: 16px;
                 text-align: justify;
               `}
             >
-              For an optimal experience, we suggest letting us take care of java
-              for you. Only manually manage java if you know what you&apos;re
-              doing, it may result in GDLauncher not working!
+              Minecraftを快適にプレイするためには、自動でJavaの設定をすることを　　お勧めするギリ。
+              もし、Javaを手動で設定する場合は、何をすべきか　　　分かっている場合のみにするギリ。
+              失敗するとKome-LabGDLauncherが　正常に動作しない可能性があるギリ。
             </div>
 
             <div
@@ -113,7 +112,7 @@ const JavaSetup = () => {
                 }
               `}
             >
-              <h3>Missing Versions:</h3>
+              <h3>右に表示されてるJavaが見つからないギリ... ➡</h3>
               <div
                 css={`
                   display: flex;
@@ -157,28 +156,28 @@ const JavaSetup = () => {
                 <Button
                   type="primary"
                   css={`
-                    width: 150px;
+                    width: 180px;
                   `}
                   onClick={() => {
                     setStep(1);
                     setChoice(0);
                   }}
                 >
-                  Automatic Setup
+                  自動でセットアップ
                 </Button>
               </div>
               <div>
                 <Button
                   type="text"
                   css={`
-                    width: 150px;
+                    width: 180px;
                   `}
                   onClick={() => {
                     setStep(1);
                     setChoice(1);
                   }}
                 >
-                  Manual Setup
+                  自分でセットアップ
                 </Button>
               </div>
             </div>
@@ -195,7 +194,7 @@ const JavaSetup = () => {
                 margin-bottom: 20px;
               `}
             >
-              {choice === 0 ? 'Automatic' : 'Manual'} Setup
+              {choice === 0 ? '自動' : '手動'} セットアップ
             </div>
             {choice === 0 ? (
               <AutomaticSetup
@@ -243,10 +242,9 @@ const ManualSetup = ({ setStep }) => {
           font-size: 18px;
         `}
       >
-        Enter the required paths to java. Java 8 will be used for all the
-        versions {'<'} 1.17, java {LATEST_JAVA_VERSION} for versions {'>='}{' '}
-        1.17. You can also use the same executable but some versions might not
-        run.
+        Javaの設定をするギリ。 Java 8
+        はMinecraft1.16.5より前で　　　使用されるギリ。Java{' '}
+        {LATEST_JAVA_VERSION} はMinecraft1.17以降で使用するギリ。
       </div>
 
       <div
@@ -257,7 +255,7 @@ const ManualSetup = ({ setStep }) => {
         `}
       >
         <Input
-          placeholder="Select your Java8 executable (MC < 1.17)"
+          placeholder="Java8の jave.exe のパスを指定するギリ (MC < 1.17で使用)"
           onChange={e => setJavaPath(e.target.value)}
           value={javaPath}
         />
@@ -279,7 +277,7 @@ const ManualSetup = ({ setStep }) => {
         `}
       >
         <Input
-          placeholder={`Select your Java ${LATEST_JAVA_VERSION} executable (MC >= 1.17)`}
+          placeholder={`Java${LATEST_JAVA_VERSION} の java.exe のパスを指定するギリ(MC >= 1.17で使用)`}
           onChange={e => setJavaLatestPath(e.target.value)}
           value={javaLatestPath}
         />
@@ -305,7 +303,7 @@ const ManualSetup = ({ setStep }) => {
         `}
       >
         <Button type="primary" onClick={() => setStep(0)}>
-          Go Back
+          戻る
         </Button>
         <Button
           type="danger"
@@ -316,7 +314,7 @@ const ManualSetup = ({ setStep }) => {
             dispatch(closeModal());
           }}
         >
-          Continue with custom java
+          カスタムJavaで続ける
         </Button>
       </div>
     </div>
@@ -395,7 +393,7 @@ const AutomaticSetup = ({
       await fse.remove(path.join(javaBaseFolder, version));
       const downloadLocation = path.join(tempFolder, path.basename(url));
 
-      setCurrentSubStep(`Java ${javaVersion} - Downloading`);
+      setCurrentSubStep(`Java ${javaVersion} - ダウンロード中...`);
       await downloadFile(downloadLocation, url, p => {
         ipcRenderer.invoke('update-progress-bar', p);
         setDownloadPercentage(p);
@@ -409,7 +407,7 @@ const AutomaticSetup = ({
       await new Promise(resolve => setTimeout(resolve, 500));
 
       setCurrentSubStep(
-        `Java ${javaVersion} - Extracting 1 / ${totalExtractionSteps}`
+        `Java ${javaVersion} - 展開中... 1 / ${totalExtractionSteps}`
       );
       let { extractedParentDir } = await extractAll(
         downloadLocation,
@@ -490,7 +488,7 @@ const AutomaticSetup = ({
 
     dispatch(updateJavaPath(null));
     dispatch(updateJavaLatestPath(null));
-    setCurrentSubStep(`Java is ready!`);
+    setCurrentSubStep(`Java の準備完了!!`);
     ipcRenderer.invoke('update-progress-bar', -1);
     setDownloadPercentage(100);
     setCurrentStepPercentage(100);
@@ -561,13 +559,13 @@ const AutomaticSetup = ({
             }
           `}
         >
-          <h2>Java is already installed!</h2>
+          <h2>Javaのインストールに成功したギリ!</h2>
           <div
             css={`
               margin-bottom: 10px;
             `}
           >
-            <h3>Java 8 details:</h3>
+            <h3>Java 8 の詳細:</h3>
             <code>{java8Log}</code>
           </div>
           <div>

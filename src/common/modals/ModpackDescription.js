@@ -225,7 +225,7 @@ const ModpackDescription = ({
             `}
           >
             <StyledSelect
-              placeholder={loading ? 'Loading Versions' : 'Select a version'}
+              placeholder={loading ? 'Loading Versions' : 'バージョンを選択するギリ'}
               onChange={handleChange}
               listItemHeight={50}
               listHeight={400}

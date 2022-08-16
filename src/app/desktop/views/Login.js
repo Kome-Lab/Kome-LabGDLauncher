@@ -19,7 +19,7 @@ import { openModal } from '../../../common/reducers/modals/actions';
 
 const LoginButton = styled(Button)`
   border-radius: 4px;
-  font-size: 22px;
+  font-size: 16px;
   background: ${props =>
     props.active ? props.theme.palette.grey[600] : 'transparent'};
   border: 0;
@@ -114,7 +114,7 @@ const Footer = styled.div`
 `;
 
 const FooterLinks = styled.div`
-  font-size: 0.75rem;
+  font-size: 0.8rem;
   margin: 0 !important;
   a {
     color: ${props => props.theme.palette.text.third};
@@ -193,6 +193,7 @@ const Login = () => {
             <Header>
               <HorizontalLogo size={200} />
             </Header>
+            <p>Mojangアカウントログイン</p>
             <Form>
               <div>
                 <Input
@@ -213,7 +214,7 @@ const Login = () => {
                 <LoginFailMessage>{loginFailed?.message}</LoginFailMessage>
               )}
               <LoginButton color="primary" onClick={authenticate}>
-                Sign In
+                サインイン
                 <FontAwesomeIcon
                   css={`
                     margin-left: 6px;
@@ -225,7 +226,7 @@ const Login = () => {
                 color="primary"
                 onClick={authenticateMicrosoft}
               >
-                Sign in with Microsoft
+                Microsoftアカウントでサインイン
                 <FontAwesomeIcon
                   css={`
                     margin-left: 6px;
@@ -246,7 +247,7 @@ const Login = () => {
                 <FooterLinks>
                   <div>
                     <a href="https://www.minecraft.net/it-it/password/forgot">
-                      FORGOT PASSWORD
+                      パスワードを　　忘れたギリ？
                     </a>
                   </div>
                 </FooterLinks>
@@ -264,8 +265,7 @@ const Login = () => {
                   font-size: 10px;
                 `}
               >
-                Sign in with your Mojang Account. By doing so, you accept all
-                our policies and terms stated below.
+                サインインすると以下に記載されているポリシーに同意したことになるギリ。
               </p>
               <div
                 css={`
@@ -312,7 +312,7 @@ const Login = () => {
               <source src={backgroundVideo} type="video/webm" />
             </video>
           </Background>
-          <Loading transitionState={transitionState}>Loading...</Loading>
+          <Loading transitionState={transitionState}>読み込み中...</Loading>
         </Container>
       )}
     </Transition>

@@ -141,7 +141,7 @@ const Import = ({
   return (
     <Container>
       <div>
-        Local file or link to a direct download
+      ModPackZipのローカルリンクまたはダウンロードリンク
         <div
           css={`
             display: flex;
