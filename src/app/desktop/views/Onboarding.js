@@ -160,7 +160,7 @@ const Home = () => {
           >
             <BisectHosting
               showPointerCursor
-              size={100}
+              size={180}
               onClick={() => dispatch(openModal('BisectHosting'))}
             />
           </div>

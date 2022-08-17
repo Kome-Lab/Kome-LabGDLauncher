@@ -13,7 +13,7 @@ import {
   faTrash,
   faPlay,
   faToilet,
-  faNewspaper,
+  // faNewspaper, ※手動で無効化
   faFolder,
   faFire,
   faSort
@@ -31,7 +31,7 @@ import {
   updateHideWindowOnGameLaunch,
   updatePotatoPcMode,
   updateInstanceSortType,
-  updateShowNews,
+  // updateShowNews, ※手動で無効化
   updateCurseReleaseChannel
 } from '../../../reducers/settings/actions';
 import { updateConcurrentDownloads } from '../../../reducers/actions';
@@ -162,7 +162,7 @@ const General = () => {
   const isPlaying = useSelector(state => state.startedInstances);
   const queuedInstances = useSelector(state => state.downloadQueue);
   const updateAvailable = useSelector(state => state.updateAvailable);
-  const showNews = useSelector(state => state.settings.showNews);
+  // const showNews = useSelector(state => state.settings.showNews); ※手動で無効化
   const DiscordRPC = useSelector(state => state.settings.discordRPC);
   const potatoPcMode = useSelector(state => state.settings.potatoPcMode);
   const concurrentDownloads = useSelector(
@@ -431,7 +431,7 @@ const General = () => {
           checked={DiscordRPC}
         />
       </Content>
-      <Title>
+      {/* <Title>
         Minecraft ニュース 表示設定 <FontAwesomeIcon icon={faNewspaper} />
       </Title>
       <Content>
@@ -442,7 +442,7 @@ const General = () => {
           }}
           checked={showNews}
         />
-      </Content>
+        </Content> */}
       <Title>
         インスタンス起動時 ランチャー自動非表示{' '}
         <FontAwesomeIcon icon={faPlay} />
