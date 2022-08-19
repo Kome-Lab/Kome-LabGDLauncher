@@ -1,11 +1,11 @@
 module.exports = {
-  new: [],
-  improvements: [
+  new: [
     {
-      header: 'BetaRelease.4',
-      content: 'uiと日本語の微調整',
-      advanced: { cm: '64ee92' }
+      header: 'Hello! Kome-Lab-GDLauncher-v1.1.27-kome-lab',
+      content: '正式リリースしたギリ!',
+      advanced: { cm: 'f89a55' }
     }
   ],
+  improvements: [],
   bugfixes: []
 };
