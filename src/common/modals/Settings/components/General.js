@@ -201,7 +201,7 @@ const General = () => {
       .invoke('getAppdataPath')
       .then(appData =>
         fsa
-          .readFile(path.join(appData, 'gdlauncher_next', 'rChannel'))
+          .readFile(path.join(appData, 'kome-labgdlauncher_next', 'rChannel'))
           .then(v => setReleaseChannel(parseInt(v.toString(), 10)))
           .catch(() => setReleaseChannel(0))
       )
@@ -223,7 +223,7 @@ const General = () => {
   const changeDataPath = async () => {
     setLoadingMoveUserData(true);
     const appData = await ipcRenderer.invoke('getAppdataPath');
-    const appDataPath = path.join(appData, 'gdlauncher_next');
+    const appDataPath = path.join(appData, 'kome-labgdlauncher_next');
 
     const notCopiedFiles = [
       'Cache',
@@ -323,13 +323,13 @@ const General = () => {
         <p>更新時に安定版を利用するかベータ版を利用するかを設定するギリ。</p>
         <Select
           css={`
-            width: 100px;
+            width: 180px;
           `}
           onChange={async e => {
             const appData = await ipcRenderer.invoke('getAppdataPath');
             setReleaseChannel(e);
             await fsa.writeFile(
-              path.join(appData, 'gdlauncher_next', 'rChannel'),
+              path.join(appData, 'kome-labgdlauncher_next', 'rChannel'),
               e.toString()
             );
           }}
@@ -349,7 +349,7 @@ const General = () => {
           onChange={v => dispatch(updateConcurrentDownloads(v))}
           value={concurrentDownloads}
           css={`
-            width: 80px;
+            width: 180px;
             text-align: start;
           `}
           virtual={false}
@@ -400,7 +400,7 @@ const General = () => {
         </p>
         <Select
           css={`
-            width: 135px;
+            width: 180px;
             text-align: start;
           `}
           onChange={e => dispatch(updateCurseReleaseChannel(e))}
@@ -488,7 +488,7 @@ const General = () => {
                 message:
                   '本当に全部消しても良いギリ？(※どうなっても知らないギリよ?)',
                 confirmCallback: clearSharedData,
-                title: 'Confirm'
+                title: '初期化'
               })
             );
           }}
@@ -510,7 +510,7 @@ const General = () => {
             setDataPath(appDataPath);
           }}
         >
-          保存場所をリセットする
+          保存場所を初期設定にする
         </a>
       </Title>
       <CustomDataPathContainer>
