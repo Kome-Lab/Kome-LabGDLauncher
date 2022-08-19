@@ -36,7 +36,7 @@ import {
 } from '../../../reducers/settings/actions';
 import { updateConcurrentDownloads } from '../../../reducers/actions';
 import { openModal } from '../../../reducers/modals/actions';
-import HorizontalLogo from '../../../../ui/HorizontalLogo';
+import HorizontalLogo from '../../../../ui/Kome-Lab-Mono-Logo';
 import { extractFace } from '../../../../app/desktop/utils';
 
 const Title = styled.div`
@@ -506,7 +506,7 @@ const General = () => {
           `}
           onClick={async () => {
             const appData = await ipcRenderer.invoke('getAppdataPath');
-            const appDataPath = path.join(appData, 'gdlauncher_next');
+            const appDataPath = path.join(appData, 'kome-labgdlauncher_next');
             setDataPath(appDataPath);
           }}
         >
@@ -589,7 +589,7 @@ const General = () => {
           `}
         >
           <HorizontalLogo
-            size={200}
+            size={150}
             onClick={() => dispatch(openModal('ChangeLogs'))}
           />{' '}
           <div

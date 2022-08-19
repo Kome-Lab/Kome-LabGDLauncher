@@ -14,7 +14,7 @@ import { login, loginOAuth } from '../../../common/reducers/actions';
 import { load, requesting } from '../../../common/reducers/loading/actions';
 import features from '../../../common/reducers/loading/features';
 import backgroundVideo from '../../../common/assets/background.webm';
-import HorizontalLogo from '../../../ui/HorizontalLogo';
+import Logo from '../../../ui/Logo';
 import { openModal } from '../../../common/reducers/modals/actions';
 
 const LoginButton = styled(Button)`
@@ -102,6 +102,7 @@ const Background = styled.div`
 const Header = styled.div`
   display: flex;
   align-items: center;
+  padding-left: 40px;
 `;
 
 const Footer = styled.div`
@@ -192,7 +193,7 @@ const Login = () => {
         <Container>
           <LeftSide transitionState={transitionState}>
             <Header>
-              <HorizontalLogo size={280} />
+              <Logo size={145} />
             </Header>
             <p>Mojangアカウントログイン</p>
             <Form>

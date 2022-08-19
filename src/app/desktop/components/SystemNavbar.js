@@ -180,7 +180,7 @@ const SystemNavbar = () => {
             `}
           >
             <a
-              href="https://gdevs.io/"
+              href="https://kome-lab.net/kome-lab-gd-launcher/"
               rel="noopener noreferrer"
               css={`
                 margin-top: 5px;
@@ -188,7 +188,7 @@ const SystemNavbar = () => {
                 -webkit-app-region: no-drag;
               `}
             >
-              <Logo size={35} pointerCursor />
+              <Logo size={40} pointerCursor />
             </a>
             <DevtoolButton />
           </div>
@@ -203,7 +203,7 @@ const SystemNavbar = () => {
                 white-space: nowrap;
               `}
             >
-              Customized
+              Customized　
             </div>
             <BisectHosting
               showPointerCursor
@@ -213,7 +213,7 @@ const SystemNavbar = () => {
               }}
             />
             {/* <PulsatingCircle /> */}
-            Studio-Kometubu Edition
+            　Studio-Kometubu Edition
           </div>
         </>
       )}
@@ -306,7 +306,7 @@ const SystemNavbar = () => {
           <div>
             <DevtoolButton />
             <a
-              href="https://gdevs.io/"
+              href="https://kome-lab.net/kome-lab-gd-launcher"
               rel="noopener noreferrer"
               css={`
                 margin-top: 5px;

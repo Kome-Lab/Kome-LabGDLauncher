@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCopy } from '@fortawesome/free-solid-svg-icons';
 
 import Modal from '../components/Modal';
-import Logo from '../../ui/LogoSad';
+import Logo from '../../ui/Logo';
 
 const calcError = code => {
   switch (code) {
@@ -53,7 +53,7 @@ const InstanceCrashed = ({ code, errorLogs }) => {
         height: 450px;
         width: 500px;
       `}
-      title="The instance could not be launched"
+      title="ど゛う゛し゛て゛ク゛ラ゛ッ゛シ゛ュ゛し゛た゛ん゛だ゛よ゛ぉ゛ー゛ー゛"
     >
       <Container>
         <InnerContainer>

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { LoadingOutlined } from '@ant-design/icons';
 import Modal from '../components/Modal';
 import { closeModal, openModal } from '../reducers/modals/actions';
-import BisectHosting from '../../ui/BisectHosting';
+import BisectHosting from '../../ui/Kome-Lab-Logo';
 import ga from '../utils/analytics';
 
 let timer;
@@ -81,7 +81,7 @@ const InstanceStartupAd = ({ instanceName }) => {
           >
             <BisectHosting
               onClick={openBisectHostingModal}
-              size={125}
+              size={150}
               showPointerCursor
             />
           </div>

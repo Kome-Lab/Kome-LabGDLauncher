@@ -1,9 +1,9 @@
 import React, { memo } from 'react';
 import styled from 'styled-components';
 import Modal from '../components/Modal';
-import BisectHostingLogo from '../../ui/BisectHosting';
+import BisectHostingLogo from '../../ui/Kome-Lab-Logo';
 
-const BisectHosting = () => {
+const KomeLogo = () => {
   return (
     <Modal
       css={`
@@ -28,7 +28,7 @@ const BisectHosting = () => {
   );
 };
 
-export default memo(BisectHosting);
+export default memo(KomeLogo);
 
 const Container = styled.div`
   width: 100%;
