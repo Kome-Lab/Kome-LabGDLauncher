@@ -78,10 +78,10 @@ const edit = [
   ...(process.platform === 'darwin'
     ? [
         {
-          label: 'GDLauncher',
+          label: 'Kome-LabGDLauncher',
           submenu: [
             {
-              label: 'About GDLauncher',
+              label: 'About Kome-LabGDLauncher',
               role: 'about'
             },
             { type: 'separator' },
@@ -92,7 +92,7 @@ const edit = [
             },
             { type: 'separator' },
             {
-              label: 'Hide GDLauncher',
+              label: 'Hide Kome-LabGDLauncher',
               accelerator: 'Command+H',
               role: 'hide'
             },
@@ -107,7 +107,7 @@ const edit = [
             },
             { type: 'separator' },
             {
-              label: 'Quit GDLauncher',
+              label: 'Quit Kome-LabGDLauncher',
               accelerator: 'Command+Q',
               click: () => {
                 app.quit();
@@ -267,7 +267,10 @@ function createWindow() {
     minHeight: 700,
     show: true,
     frame: false,
-    backgroundColor: '#1B2533',
+    backgroundImage: path.join(
+      __dirname,
+      '../../src/common/assets/fullHdBackground.jpg'
+    ),
     webPreferences: {
       experimentalFeatures: true,
       nodeIntegration: true,
@@ -338,7 +341,7 @@ function createWindow() {
   tray = new Tray(nimage);
   const trayMenuTemplate = [
     {
-      label: 'GDLauncher',
+      label: 'Kome-LabGDLauncher',
       enabled: false
     },
     {
@@ -349,7 +352,7 @@ function createWindow() {
 
   const trayMenu = Menu.buildFromTemplate(trayMenuTemplate);
   tray.setContextMenu(trayMenu);
-  tray.setToolTip('GDLauncher');
+  tray.setToolTip('Kome-LabGDLauncher');
   tray.on('double-click', () => mainWindow.show());
 
   mainWindow.loadURL(

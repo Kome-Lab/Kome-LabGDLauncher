@@ -76,7 +76,7 @@ const main = async () => {
       'https://api.github.com/repos/Kome-Lab/Kome-LabGDLauncher/releases',
       {
         tag_name: `v${version}`,
-        name: `PreRelease/Kome-LabGDLauncher v${version}`,
+        name: `Kome-LabGDLauncher v${version}`,
         draft: true,
         prerelease: version.includes('beta'),
         body: `# Kome-LabGDLauncher \n ## このLauncherは [gorilla-devs/GDLauncher](https://github.com/gorilla-devs/GDLauncher) を元にして作られたランチャーギリ \n ## このバージョンはBeta版なので使わない方が良いギリ\n <br> \n # ChangeLog \n ${getChangeLog()} \n <br> \n # ダウンロードはこちら！\n ### [Windows](https://github.com/Kome-Lab/Kome-LabGDLauncher/releases/download/v${version}/Kome-LabGDLauncher-win-setup.exe) \n ### [Mac](https://github.com/Kome-Lab/Kome-LabGDLauncher/releases/download/v${version}/Kome-LabGDLauncher-mac-setup.dmg) \n ### [Linux-AppImage](https://github.com/Kome-Lab/Kome-LabGDLauncher/releases/download/v${version}/Kome-LabGDLauncher-linux-setup.AppImage) \n ### [Linux-deb](https://github.com/Kome-Lab/Kome-LabGDLauncher/releases/download/v${version}/Kome-LabGDLauncher-linux-setup.deb) \n ### [Linux-rpm](https://github.com/Kome-Lab/Kome-LabGDLauncher/releases/download/v${version}/Kome-LabGDLauncher-linux-setup.rpm)`
