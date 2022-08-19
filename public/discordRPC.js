@@ -10,7 +10,7 @@ const defaultValue = {
   details: 'Idle',
   startTimestamp: initialAppStartup,
   largeImageKey: 'default_big',
-  largeImageText: 'Beta.3!!Kome-LabGDLauncher - A Custom Minecraft Launcher',
+  largeImageText: 'Beta.4!!Kome-LabGDLauncher - A Custom Minecraft Launcher',
   instance: false
 };
 

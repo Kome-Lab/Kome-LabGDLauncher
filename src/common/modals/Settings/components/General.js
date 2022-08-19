@@ -323,7 +323,7 @@ const General = () => {
         <p>更新時に安定版を利用するかベータ版を利用するかを設定するギリ。</p>
         <Select
           css={`
-            width: 180px;
+            width: 130px;
           `}
           onChange={async e => {
             const appData = await ipcRenderer.invoke('getAppdataPath');
@@ -349,7 +349,7 @@ const General = () => {
           onChange={v => dispatch(updateConcurrentDownloads(v))}
           value={concurrentDownloads}
           css={`
-            width: 180px;
+            width: 120px;
             text-align: start;
           `}
           virtual={false}
@@ -380,7 +380,7 @@ const General = () => {
           onChange={v => dispatch(updateInstanceSortType(v))}
           value={instanceSortMethod}
           css={`
-            width: 180px;
+            width: 200px;
             text-align: start;
           `}
         >
@@ -394,13 +394,15 @@ const General = () => {
       </Title>
       <Content>
         <p>
-          Curseプロジェクトをダウンロードするための優先リリースチャンネルを選択するギリ。
+          Curseプロジェクトをダウンロードする際の
+          <br />
+          優先するリリースチャンネルを選択するギリ。
           <br />
           これは、MODのアップデートにも適用されるギリ。
         </p>
         <Select
           css={`
-            width: 180px;
+            width: 150px;
             text-align: start;
           `}
           onChange={e => dispatch(updateCurseReleaseChannel(e))}
