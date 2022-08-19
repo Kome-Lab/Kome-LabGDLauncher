@@ -29,5 +29,11 @@ module.exports = {
       advanced: { cm: '1200f4' }
     }
   ],
-  bugfixes: []
+  bugfixes: [
+    {
+      header: 'BetaRelease.2-2',
+      content: 'fix icon.png size',
+      advanced: { cm: '4bbc50' }
+    }
+  ]
 };
