@@ -34,6 +34,11 @@ module.exports = {
       header: 'BetaRelease.2-2',
       content: 'fix icon.png size',
       advanced: { cm: '4bbc50' }
+    },
+    {
+      header: 'BetaRelease.2-3',
+      content: 'fix icon size',
+      advanced: { cm: '1ca8fa' }
     }
   ]
 };
