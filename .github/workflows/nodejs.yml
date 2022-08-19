@@ -64,9 +64,9 @@ jobs:
           BITRISE_GIT_TAG: ''
           GITHUB_ACTIONS: ''
           CI_BUILD_TAG: ''
-          SENTRY_DSN: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_DSN || '' }}"
-          SOURCE_MAPS_UPLOAD: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_UPLOAD_SOURCE_MAPS_URL || '' }}"
-          SENTRY_AUTH: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_AUTH || '' }}"
+          SENTRY_DSN: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_DSN || '' }}"
+          SOURCE_MAPS_UPLOAD: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_UPLOAD_SOURCE_MAPS_URL || '' }}"
+          SENTRY_AUTH: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_AUTH || '' }}"
           REACT_CF_API_KEY: "${{ secrets.CF_API_KEY }}"
         run: |
           npm run release
@@ -80,14 +80,14 @@ jobs:
           GITHUB_ACTIONS: ''
           BITRISE_GIT_TAG: ''
           CI_BUILD_TAG: ''
-          SENTRY_DSN: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_DSN || '' }}"
-          SOURCE_MAPS_UPLOAD: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_UPLOAD_SOURCE_MAPS_URL || '' }}"
-          SENTRY_AUTH: "${{ github.ref == 'refs/heads/releases' && secrets.SENTRY_AUTH || '' }}"
+          SENTRY_DSN: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_DSN || '' }}"
+          SOURCE_MAPS_UPLOAD: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_UPLOAD_SOURCE_MAPS_URL || '' }}"
+          SENTRY_AUTH: "${{ github.ref == 'refs/heads/v1.1.27-komelab' && secrets.SENTRY_AUTH || '' }}"
           REACT_CF_API_KEY: "${{ secrets.CF_API_KEY }}"
         run: |
           npm run release
       - name: upload release to gh releases
-        if: github.event_name == 'push' && github.ref == 'refs/heads/releases'
+        if: github.event_name == 'push' && github.ref == 'refs/heads/v1.1.27-komelab'
         env:
           GH_ACCESS_TOKEN_RELEASES: ${{ secrets.GH_ACCESS_TOKEN_RELEASES }}
         run: |
