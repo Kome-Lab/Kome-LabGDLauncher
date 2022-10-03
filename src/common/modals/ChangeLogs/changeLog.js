@@ -1,7 +1,18 @@
 module.exports = {
   new: [],
-  improvements: [],
+  improvements: [
+    {
+      header: '1.1.29-komelab-beta.1',
+      content: '日本語の修正及び軽微な修正',
+      advanced: { cm: '4290df4' }
+    }
+  ],
   bugfixes: [
+    {
+      header: '1.1.29-komelab-beta.1',
+      content: 'fix code',
+      advanced: { cm: '074a1b7' }
+    },
     {
       header: 'No longer killing the game',
       content: 'when closing the Launcher.',
