@@ -175,7 +175,7 @@ const OptedOutModsList = ({
           300
         );
       }}
-      title="Opted out mods list"
+      title="サードパーティーランチャー拒否Mod"
     >
       <Container>
         <div
@@ -184,10 +184,10 @@ const OptedOutModsList = ({
             margin-bottom: 2rem;
           `}
         >
-          Hey oh! It looks like some developers opted out from showing their
-          mods on third-party launchers. We can still attempt to download them
-          automatically. Please click continue and wait for all downloads to
-          finish. Please don&apos;t click anything inside the browser.
+          一部の開発者はModをサードパーティーのランチャに表示させないようにしているギリ。
+          続行をクリックすることで自動ダウンロードを試みるギリ。
+          ブラウザが表示されますが、何もクリックをしないでくださいギリ。
+
         </div>
         <ModsContainer>
           {optedOutMods &&
@@ -222,7 +222,7 @@ const OptedOutModsList = ({
               );
             }}
           >
-            Cancel
+            キャンセル
           </Button>
           {missingMods.length === 0 && (
             <Button
@@ -254,7 +254,7 @@ const OptedOutModsList = ({
                 background-color: ${props => props.theme.palette.colors.green};
               `}
             >
-              Confirm
+              OKギリ
             </Button>
           )}
           {missingMods.length > 0 && (
@@ -269,7 +269,7 @@ const OptedOutModsList = ({
                 background-color: ${props => props.theme.palette.colors.green};
               `}
             >
-              Continue
+              続行するギリ
             </Button>
           )}
         </div>

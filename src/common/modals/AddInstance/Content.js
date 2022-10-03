@@ -124,7 +124,7 @@ const Content = ({
                         cursor: pointer;
                       `}
                     />
-                    Import Zip
+                    Zip/URL インポート
                   </Radio.Button>
                 </Radio.Group>
               </div>

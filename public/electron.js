@@ -64,8 +64,8 @@ if (gotTheLock) {
   app.quit();
 }
 
-if (!app.isDefaultProtocolClient('gdlauncher')) {
-  app.setAsDefaultProtocolClient('gdlauncher');
+if (!app.isDefaultProtocolClient('kome-labgdlauncher')) {
+  app.setAsDefaultProtocolClient('kome-labgdlauncher');
 }
 
 // This gets rid of this: https://github.com/electron/electron/issues/13186
@@ -370,7 +370,7 @@ function createWindow() {
       ? 'http://localhost:3000'
       : `file://${path.join(__dirname, '../build/index.html')}`,
     {
-      userAgent: 'GDLauncher'
+      userAgent: 'Kome-LabGDLauncher'
     }
   );
   if (isDev) {

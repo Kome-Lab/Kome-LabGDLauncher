@@ -150,7 +150,7 @@ const Import = ({
         >
           <Input
             disabled={loading}
-            placeholder="http://.../file.zip"
+            placeholder="http://...C:/.../home.../File.zip"
             value={localValue}
             onChange={e => setLocalValue(e.target.value)}
             css={`

@@ -16,7 +16,6 @@ import {
   faStop,
   faBoxOpen,
   faCopy,
-  faServer,
   faHammer
 } from '@fortawesome/free-solid-svg-icons';
 import psTree from 'ps-tree';
@@ -199,9 +198,6 @@ const Instance = ({ instanceName }) => {
   };
   const manageInstance = () => {
     dispatch(openModal('InstanceManager', { instanceName }));
-  };
-  const openBisectModal = () => {
-    dispatch(openModal('BisectHosting'));
   };
   const instanceExportCurseForge = () => {
     dispatch(openModal('InstanceExportCurseForge', { instanceName }));
@@ -440,23 +436,6 @@ const Instance = ({ instanceName }) => {
             インスタンスを削除
           </MenuItem>
           <MenuItem divider />
-          <MenuItem
-            onClick={openBisectModal}
-            preventClose
-            css={`
-              border: 2px solid #04cbeb;
-              border-radius: 5px;
-            `}
-          >
-            <FontAwesomeIcon
-              icon={faServer}
-              css={`
-                margin-right: 10px;
-                width: 25px !important;
-              `}
-            />
-            Create Server
-          </MenuItem>
         </ContextMenu>
       </Portal>
     </>

@@ -248,7 +248,7 @@ const Login = () => {
               >
                 <FooterLinks>
                   <div>
-                    <a href="https://www.minecraft.net/it-it/password/forgot">
+                    <a href="https://www.minecraft.net/ja-jp/password/forgot">
                       パスワードを　　忘れたギリ？
                     </a>
                   </div>
