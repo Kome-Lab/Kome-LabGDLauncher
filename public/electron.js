@@ -168,7 +168,10 @@ const userAgent = new UserAgent({
 // app.allowRendererProcessReuse = true;
 Menu.setApplicationMenu(Menu.buildFromTemplate(edit));
 
-app.setPath('userData', path.join(app.getPath('appData'), 'kome-labgdlauncher_next'));
+app.setPath(
+  'userData',
+  path.join(app.getPath('appData'), 'kome-labgdlauncher_next')
+);
 
 let allowUnstableReleases = false;
 const releaseChannelExists = fss.existsSync(
