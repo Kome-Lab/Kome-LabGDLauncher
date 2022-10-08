@@ -183,6 +183,10 @@ const menuEntries = {
   },
   // resourcePacks: { name: "Resource Packs", component: Overview },
   // worlds: { name: "Worlds", component: Overview },
+  shaderPacks: {
+    name: 'シェーダーパック',
+    component: AsyncComponent(lazy(() => import('./ShaderPacks')))
+  },
   screenshots: {
     name: 'スクリーンショット',
     component: AsyncComponent(lazy(() => import('./Screenshots')))
