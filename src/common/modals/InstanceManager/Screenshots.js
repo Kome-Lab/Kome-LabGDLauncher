@@ -82,12 +82,12 @@ const openFolder = screenshotsPath => {
 
 const getTitle = days => {
   const parsedDays = Number.parseInt(days, 10);
-  if (parsedDays === 0) return 'Today';
-  else if (parsedDays === 1) return 'Yesterday';
-  else if (parsedDays > 1 && parsedDays < 30) return `${days} days ago`;
+  if (parsedDays === 0) return '今日';
+  else if (parsedDays === 1) return '昨日';
+  else if (parsedDays > 1 && parsedDays < 30) return `${days} 日前`;
   else if (parsedDays >= 30 && parsedDays < 365)
-    return `${Math.floor(days / 30)} months ago`;
-  else if (parsedDays >= 365) return `${Math.floor(days / 365)} years ago`;
+    return `${Math.floor(days / 30)} カ月前`;
+  else if (parsedDays >= 365) return `${Math.floor(days / 365)} 年前`;
 };
 
 const getScreenshotsCount = groups =>
@@ -120,7 +120,7 @@ const Screenshots = ({ instanceName }) => {
       selectedItems[0] != uploadingFileName
     ) {
       return 'Busy! Wait before uploading another image';
-    } else return 'Share the image via url';
+    } else return '画像をURLで共有する(imgurを使用するギリ)';
   };
 
   const containerRef = useRef(null);
@@ -261,7 +261,7 @@ const Screenshots = ({ instanceName }) => {
                           <Photo
                             onClick={() =>
                               dispatch(
-                                openModal('Screenshot', {
+                                openModal('スクリーンショット', {
                                   screenshotsPath,
                                   file
                                 })
