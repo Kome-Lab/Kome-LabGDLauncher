@@ -2,8 +2,7 @@ import React, { memo, useState, useEffect, useCallback } from 'react';
 import styled, { keyframes } from 'styled-components';
 import memoize from 'memoize-one';
 import path from 'path';
-import { watch } from 'fs';
-import * as fs from 'fs';
+import { promises as fs, watch } from 'fs';
 import makeDir from 'make-dir';
 import { ipcRenderer } from 'electron';
 import { FixedSizeList as List, areEqual } from 'react-window';
@@ -197,7 +196,7 @@ const ShaderPacks = ({ instanceName }) => {
       item,
       instancesPathh,
       selectedItemss,
-      sdPacksPath,
+      rscPacksPath,
       instanceNamee
     ) => {
       if (item) {
@@ -207,7 +206,7 @@ const ShaderPacks = ({ instanceName }) => {
       } else if (selectedItemss.length > 0) {
         await Promise.all(
           selectedItemss.map(async file => {
-            await fse.remove(path.join(sdPacksPath, file));
+            await fse.remove(path.join(rscPacksPath, file));
           })
         );
       }
@@ -301,18 +300,11 @@ const ShaderPacks = ({ instanceName }) => {
 
   const startListener = async () => {
     await makeDir(shaderPacksPath);
-    const files = fs
-      .readdirSync(shaderPacksPath, { withFileTypes: true }) // 同期でファイル読み込み
-      .filter(dirent => dirent.isFile())
-      .map(({ name }) => name) // フォルダ除外
-      // eslint-disable-next-line func-names
-      .filter(function (file) {
-        return path.extname(file).toLowerCase() === '.zip'; // 拡張子zipだけ
-      });
+    const files = await fs.readdir(shaderPacksPath);
     setShaderPacks(files);
     watcher = watch(shaderPacksPath, async (event, filename) => {
       if (filename) {
-        const shaderPackFiles = fs.readdir(shaderPacksPath);
+        const shaderPackFiles = await fs.readdir(shaderPacksPath);
         setShaderPacks(shaderPackFiles);
         setSelectedItems(prev => {
           return prev.filter(v => shaderPackFiles.includes(v));
