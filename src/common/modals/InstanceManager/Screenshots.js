@@ -261,7 +261,7 @@ const Screenshots = ({ instanceName }) => {
                           <Photo
                             onClick={() =>
                               dispatch(
-                                openModal('スクリーンショット', {
+                                openModal('Screenshot', {
                                   screenshotsPath,
                                   file
                                 })
