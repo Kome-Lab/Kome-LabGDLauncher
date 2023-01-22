@@ -3,33 +3,30 @@ module.exports = {
   improvements: [
     {
       header:
-        'Move nsfw to dependencies, remove napi & murmur2 binaries. (gorilla-devs#1446)',
+        'Fix broken windows nsfw build introduced in gorilla-devs#1446 (gorilla-devs#1518)',
       content: '',
-      advanced: { cm: '20148d6' }
+      advanced: { cm: 'a8dfa1c' }
     },
     {
-      header: 'Updated base URL for fetching news images (gorilla-devs#1443)',
+      header: 'Add architecture-dependend metadata for ARM (gorilla-devs#1521)',
       content: '',
-      advanced: { cm: 'efa324a' }
+      advanced: { cm: 'e69a7e3' }
     },
     {
-      header: 'Allow for Local ARM64 Linux Building (gorilla-devs#1451)',
+      header: 'ensure user path exists',
       content: '',
-      advanced: { cm: '4fd9a47' }
+      advanced: { cm: '36f9548' }
     },
     {
-      header:
-        'Fix java arch being inconsistent with the manifest (gorilla-devs#1515)',
+      header: 'lint fix',
       content: '',
-      advanced: { cm: '2f20cd9' }
+      advanced: { cm: '7fg15c7' }
+    },
+    {
+      header: 'fix',
+      content: '',
+      advanced: { cm: '671a76' }
     }
   ],
-  bugfixes: [
-    {
-      header:
-        'Update microsoft URI from HTTP to HTTPS - gorilla-devs#1513 (gorilla-devs#1514)',
-      content: '',
-      advanced: { cm: '73b3f48' }
-    }
-  ]
+  bugfixes: []
 };
