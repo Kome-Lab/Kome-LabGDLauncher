@@ -41,7 +41,7 @@ const UpdateRow = ({ header, content, advanced }) => {
           `}
         >
           <a
-            href={`https://github.com/gorilla-devs/GDLauncher/commit/${advanced.cm}`}
+            href={`https://github.com/Kome-Lab/Kome-LabGDLauncher/commit/${advanced.cm}`}
           >
             {advanced.cm}
           </a>
@@ -50,7 +50,7 @@ const UpdateRow = ({ header, content, advanced }) => {
               {' | '}
               {/* Yes, this was the best (and shortest) version to do this I could come up with */}
               <a
-                href={`https://github.com/gorilla-devs/GDLauncher/pull/${
+                href={`https://github.com/Kome-Lab/Kome-LabGDLauncher/pull/${
                   prSplit[0]
                 }${prSplit.length > 1 ? `/commits/${prSplit[1]}` : ''}`}
               >
