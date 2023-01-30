@@ -13,7 +13,7 @@ name: "CodeQL"
 
 on:
   workflow_dispatch:
-    branches: [ "v1.1.29-kome-lab.3" ]
+    branches: [ "v1.1.30-kome-lab.1" ]
   schedule:
     - cron: '00 23 * * 0'
 
