@@ -328,7 +328,7 @@ const OptedOutModsList = ({
                   background-color: ${props => props.theme.palette.colors.blue};
                 `}
               >
-                フォルダーを開く
+                フォルダーを開くギリ
               </Button>
               <Button
                 type="primary"

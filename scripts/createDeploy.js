@@ -189,9 +189,9 @@ const commonConfig = {
     },
     protocols: [
       {
-        name: 'gdlauncher',
+        name: 'kome-labgdlauncher',
         role: 'Viewer',
-        schemes: ['gdlauncher']
+        schemes: ['kome-labgdlauncher']
       }
     ]
   },

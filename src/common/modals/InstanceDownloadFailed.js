@@ -98,7 +98,7 @@ const InstanceDownloadFailed = ({
             onClick={deleteDownload}
             disabled={loading}
           >
-            インスタンスを削除
+            ダウンロードをキャンセル
           </Button>
           {isUpdate && (
             <Button
