@@ -354,7 +354,7 @@ const General = () => {
           `}
           virtual={false}
         >
-          {[...Array(10).keys()]
+          {[...Array(50).keys()]
             .map(x => x + 1)
             .map(x => (
               <Select.Option key={x} value={x}>
