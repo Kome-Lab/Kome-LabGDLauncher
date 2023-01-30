@@ -202,16 +202,18 @@ const OptedOutModsList = ({
       title="サードパーティーランチャー拒否Mod"
     >
       <Container>
-        <div
-          css={`
-            text-align: left;
-            margin-bottom: 2rem;
-          `}
-        >
+        {!cloudflareBlock && (
+          <div
+            css={`
+              text-align: left;
+              margin-bottom: 2rem;
+            `}
+          >
           一部の開発者はModをサードパーティーのランチャに表示させないようにしているギリ。
           続行をクリックすることで自動ダウンロードを試みるギリ。
           ブラウザが表示されますが、何もクリックをしないでくださいギリ。
-        </div>
+          </div>
+        )}
         <ModsContainer>
           {optedOutMods &&
             optedOutMods.map(mod => {
@@ -230,7 +232,6 @@ const OptedOutModsList = ({
         {cloudflareBlock && (
           <p
             css={`
-              width: 90%;
               margin: 20px auto 0 auto;
             `}
           >
@@ -253,7 +254,9 @@ const OptedOutModsList = ({
           <Button
             danger
             type="text"
-            disabled={downloading || loadedMods.length !== 0}
+            disabled={
+              (missingMods.length > 0 && !cloudflareBlock) || downloading
+            }
             onClick={() => {
               dispatch(closeModal());
               setTimeout(
@@ -289,6 +292,7 @@ const OptedOutModsList = ({
                   mods: optedOutMods,
                   instancePath
                 });
+                setDownloading(false);
               }}
               css={`
                 background-color: ${props => props.theme.palette.colors.green};
