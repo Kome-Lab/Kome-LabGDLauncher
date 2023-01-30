@@ -1,35 +1,44 @@
 module.exports = {
-  new: [],
+  new: [
+    {
+      header: 'Support ARM',
+      content: 'Architecture.',
+      advanced: { cm: '4fd9a4', pr: '1451' }
+    },
+    {
+      header: 'Add manual download',
+      content: 'option for failed opted out mods.',
+      advanced: { cm: 'a8dfa1', pr: '1512' }
+    }
+  ],
   improvements: [
     {
-      header:
-        'Move nsfw to dependencies, remove napi & murmur2 binaries. (gorilla-devs#1446)',
-      content: '',
-      advanced: { cm: '20148d6' }
+      header: 'Updated url',
+      content: 'for minecraft news images.',
+      advanced: { cm: 'efa324', pr: '1443' }
     },
     {
-      header: 'Updated base URL for fetching news images (gorilla-devs#1443)',
-      content: '',
-      advanced: { cm: 'efa324a' }
+      header: 'Simplifications',
+      content:
+        ' to the codebase, napi and nsfw now get automatically compiled on build.',
+      advanced: { cm: '20148d', pr: '1446' }
     },
     {
-      header: 'Allow for Local ARM64 Linux Building (gorilla-devs#1451)',
-      content: '',
-      advanced: { cm: '4fd9a47' }
-    },
-    {
-      header:
-        'Fix java arch being inconsistent with the manifest (gorilla-devs#1515)',
-      content: '',
-      advanced: { cm: '2f20cd9' }
+      header: 'Add restore option',
+      content: 'to failed updates.',
+      advanced: { cm: '9d84085', pr: '1531' }
     }
   ],
   bugfixes: [
     {
-      header:
-        'Update microsoft URI from HTTP to HTTPS - gorilla-devs#1513 (gorilla-devs#1514)',
-      content: '',
-      advanced: { cm: '73b3f48' }
+      header: 'Fix asset downloading',
+      content: 'now enforcing https.',
+      advanced: { cm: '73b3f4', pr: '1514' }
+    },
+    {
+      header: 'Fix deprecated warnings',
+      content: 'for dropped file handles.',
+      advanced: { cm: '9d84085', pr: '1531' }
     }
   ]
 };
