@@ -107,7 +107,7 @@ const InstanceDownloadFailed = ({
               onClick={restoreDownload}
               loading={loading}
             >
-              Restore instance
+              インスタンスを復元する
             </Button>
           )}
           <Button danger type="primary" onClick={retry} disabled={loading}>
