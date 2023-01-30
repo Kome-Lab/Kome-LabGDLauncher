@@ -209,9 +209,9 @@ const OptedOutModsList = ({
               margin-bottom: 2rem;
             `}
           >
-          一部の開発者はModをサードパーティーのランチャに表示させないようにしているギリ。
-          続行をクリックすることで自動ダウンロードを試みるギリ。
-          ブラウザが表示されますが、何もクリックをしないでくださいギリ。
+            一部の開発者はModをサードパーティーのランチャに表示させないようにしているギリ。
+            続行をクリックすることで自動ダウンロードを試みるギリ。
+            ブラウザが表示されますが、何もクリックをしないでくださいギリ。
           </div>
         )}
         <ModsContainer>
@@ -328,7 +328,7 @@ const OptedOutModsList = ({
                   background-color: ${props => props.theme.palette.colors.blue};
                 `}
               >
-                Open folder
+                フォルダーを開く
               </Button>
               <Button
                 type="primary"
@@ -342,7 +342,7 @@ const OptedOutModsList = ({
                     props.theme.palette.colors.green};
                 `}
               >
-                Continue
+                続行するギリ
               </Button>
             </>
           )}
